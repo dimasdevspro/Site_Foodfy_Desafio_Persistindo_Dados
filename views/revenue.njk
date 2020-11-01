@@ -1,0 +1,74 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+  <section class="card_revenue">
+
+    <div class="img_revenue_id">
+      <img src="{{item.image}}" alt=""/>
+    </div>
+
+    <div class="title_revenue_id">
+      <p>{{item.title}}</p>
+    </div>
+
+    <div class="author_revenue_id">
+      <p>{{item.author}}</p>
+    </div>
+
+    <div class="topic-ingredients">
+
+      <div class="grid_revenue_id">
+        <p class="subtitles_revenue_id">Ingredientes</p>
+        <h4>Esconder</h4>
+      </div>
+
+      <div class="ingredients">
+        <ul>
+          {% for ingredient in item.ingredients %}
+            <li>
+              {{ingredient}}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="topic-preparation">
+
+      <div class="grid_revenue_id">
+        <p class="subtitles_revenue_id">Modo de Preparo</p>
+        <h4>Esconder</h4>
+      </div>
+
+      <div class="preparation">
+        <ul>
+          {% for preparation in item.preparations %}
+            <li>
+              {{preparation}}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="topic-information">
+
+      <div class="grid_revenue_id">
+        <p class="subtitles_revenue_id">Informações Adicionais</p>
+        <h4>Esconder</h4>
+      </div>
+
+      <div class="information">
+        <p>{{item.informations}}</p>
+      </div>
+      
+    </div>
+
+  </section>
+
+  <script src="/scripts.js"></script>
+
+{% endblock %}
