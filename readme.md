@@ -6,6 +6,7 @@
 <!--ts-->
 * [Sobre](#sobre)
 * [Status do Projeto](#status-do-projeto)
+* [Histórico do Projeto](#historico-do-projeto)
 * [Features](#features)
 * [Demonstração da Aplicação](#demonstração-da-aplicação)
 * [Pré-requisitos](#pré-requisitos)
@@ -17,24 +18,29 @@
 
 ### Sobre [↩](#indice)
 
-<p align="center">Refatoração do Site com Nunjucks e upgrade de estilos. Desafios propostos pela Rocketseat no Bootcamp Launchbase:</p>
+<p align="center">Acrescentando ao Projeto páginas de administração de receitas. Desafios propostos pela Rocketseat no Bootcamp Launchbase:</p>
 <ul >
- <li><a href="https://github.com/rocketseat-education/bootcamp-launchbase-desafios-03/blob/master/desafios/03-refatorando-foodfy.md" target="_blank">Desafio Foodfy;</a></li>
+ <li><a href="https://github.com/rocketseat-education/bootcamp-launchbase-desafios-04/blob/master/desafios/04-admin-foodfy.md" target="_blank">Desafio Foodfy;</a></li>
 </ul>
 <p>Detalhes do Projeto:</p>
 <ul>
  <li>Criação de um Backend para o Front-end;</li>
  <li>Dinamismo do site com template Nunjucks - upgrade;</li>
- <li>Redirecionamento de Livro de Receitas para página individual para cada receita</li>
- <li>Detalhamento em CSS para "Esconder" ou "Mostrar" informações contidas na página da receita.</li>
 </ul>
-
 
 ### Status do Projeto [↩](#indice)
 
 <h4> 
-	👌 Concluído 👌
+	Em construção...
 </h4>
+
+### Histórico do Projeto [↩](#indice)
+
+<p>Evolução do projeto ao longo do Bootcamp:</p>
+<ul>
+<li><a href="https://github.com/dimasdevspro/Site_Foodfy">FrontPage simples</a></li>
+<li><a href="https://github.com/dimasdevspro/Project_Foodfy_Refatorado">Refatoração do Projeto</a></li>
+</ul>
 
 
 ### Features [↩](#indice)
@@ -42,11 +48,12 @@
 - [x] Página Sobre
 - [x] Página com receitas
 - [x] Página de cada receita
+- [x] Gerenciar receitas (em construção...)
 
 
 ### Demonstração da Aplicação [↩](#indice)
 
-<h1 align="center"><img src="screenshots/FoodFyrefatorado.gif" height="350" weigth="350"></h1>
+<h1 align="center">Em construção...</h1>
 
 
 ### Pré-requisitos [↩](#indice)
@@ -72,27 +79,26 @@ $ <https://code.visualstudio.com/>
 # Acesse o terminal/cmd de sua plataforma (Win, Linux, etc)
 
 # Clone este repositório com o seguinte comando abaixo
-$ git clone <https://github.com/dimasdevspro/Project_Foodfy_Refatorado>
+$ git clone <https://github.com/dimasdevspro/Desafio_Foodfy_Admin>
 
 # Ainda no terminal, acesse a pasta com mais um comando
-$ cd Project_Foodfy_Refatorado
+$ cd Desafio_Foodfy_Admin
 
 # Agora digite este comando, para editar/testas o projeto
 $ code .
 
 ```
 
-
 ### Instalação de Dependências [↩](#indice)
 
-Instalação de Dependências "Express", "Nodemon" e "Nunjucks" para rodar aplicação.
+Instalação de Dependências "Express", "Nodemon", "Nunjucks", "Browsersync" e "MethodOverride" para rodar aplicação.
 
 ```bash
 # Abra o terminal do VSCode na Aba "Terminal"
 $ "New Terminal"
 
 # Certifique-se que o terminal está com o caminho de sua pasta, i.e
-$ /Project_Foodfy_Refatorado/
+$ /Desafio_Foodfy_Admin/
 
 # Digite o comando no terminal para instalar o Express
 $ npm install express
@@ -100,17 +106,24 @@ $ npm install express
 # Digite o comando no terminal para instalar o "Nodemon"
 $ npm install -D nodemon
 
-# No arquivo "package.json", localize e modifique a linha "start": node server.js para:
-$ "start": nodemon server.js
-
-# Digite o comando abaixo para instalar o "Nunjucks"
+# Digite o comando no terminal para instalar o "Nunjucks"
 $ npm install nunjucks
+
+# Digite o comando no terminal para instalar o "Nunjucks"
+$ npm install method-override
+
+# Digite o comando no terminal para instalar o "Browsersync"
+$ npm install browser-sync npm-run-all
+
+# Certifique que no arquivo package.json, na linha "scripts" esteve descrito:
+"scripts": {
+    "start": "npm-run-all -p nodemon browser-sync",
+    "nodemon": "nodemon server.js",
+    "browser-sync": "browser-sync start --proxy http://localhost:3333 --files 'public,views'"
+  },
 
 # Digite no terminal o seguinte comando para rodar o servidor
 $ npm start
-
-# Para rodar a aplicação no browser, digite
-$ http://localhost:3333/
 
 ```
 
