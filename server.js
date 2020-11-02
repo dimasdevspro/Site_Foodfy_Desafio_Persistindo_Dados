@@ -10,11 +10,14 @@ server.use(routes)
 
 server.set("view engine", "njk");
 
-nunjucks.configure("views", {
-  express: server,
-});
+const folders = ["admin", "views"]
+nunjucks.configure(folders, {express: server})
 
+routes.use(function (req, res) {
+  return res.status(404).render("not-found");
+});
 
 server.listen(3333, function () {
   console.log("Server is running!");
 });
+

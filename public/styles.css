@@ -8,20 +8,30 @@
 }
 /*==========PAGE INDEX==============*/
 .menu {
-  margin: 36.1px 0 36px 231px;
+ width: 1400px;
+ height: 80px;
   display: grid;
   grid-template-columns: 0.25fr 1fr;
+  background-color: black;
+}
+.img_logo {
+  margin: 27px 0px 26.1px 231px;
 }
 
 .menu_links {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin-left: 122.4px;
   word-spacing: 30px;
 }
 
 .menu_links a {
-  color: #111111;
+  color: white;
   font-size: 16px;
   line-height: 19px;
   text-decoration: none;
+  
 }
 
 .not-found {
@@ -91,6 +101,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
   margin: 0px 230px;
   gap: 20px;
 }
@@ -221,9 +232,8 @@ h4 {
 .footer {
   width: 1400px;
   height: 62px;
-  position: absolute;
-  margin: 50px 0px 0px 0px;
   background-color: #eeeeee;
+  margin-top: 600px;
 }
 
 .footer p {
@@ -293,3 +303,38 @@ h4 {
   font-size: 18px;
   line-height: 28px;
 }
+
+/*=============INDEX=============*/
+
+#admin-revenue-title {
+    width: 298px;
+    height: 28px;
+    position: absolute;
+    margin: 30px 972px 30px 0px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #111111;
+    line-height: 28px;
+}
+
+#button-create {
+  text-decoration: none;
+  width: 100px;
+  height: 40px;
+margin: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #111111;
+  line-height: 24px;
+  display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+#button-create:hover {
+  box-shadow: 1px 2px 3px 4px #444444;
+  transition: all .4s ease-in-out;
+  cursor: pointer; 
+}
+/*=============CREATE=============*/

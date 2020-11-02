@@ -119,7 +119,7 @@ $ npm install browser-sync npm-run-all
 "scripts": {
     "start": "npm-run-all -p nodemon browser-sync",
     "nodemon": "nodemon server.js",
-    "browser-sync": "browser-sync start --proxy http://localhost:3333 --files 'public,views'"
+    "browser-sync": "browser-sync start --proxy http://localhost:3333 --files 'public,admin'"
   },
 
 # Digite no terminal o seguinte comando para rodar o servidor

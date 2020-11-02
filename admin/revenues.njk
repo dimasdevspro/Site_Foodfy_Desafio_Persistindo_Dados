@@ -1,0 +1,31 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+  
+  <section class="cards">
+    <div id="admin-revenue-title">
+      <p>Gerenciar Receitas</p>
+      <a id="button-create" href="/admin/revenues/create">Cadastrar</a>
+    </div>
+    
+    {% for item in items %}
+
+      <a href="/admin/revenues/" class="card_link" target="_blank">
+        <div class="img_revenue">
+          <img src="{{item.image}}" alt=""/>
+        </div>
+        <div class="title_revenue">
+          <p>{{item.title}}</p>
+        </div>
+        <div class="author_revenue">
+          <p>{{item.author}}</p>
+        </div>
+
+      </a>
+
+    {% endfor %}
+
+  </section>
+  <script src="/scripts.js"></script>
+{% endblock %}
