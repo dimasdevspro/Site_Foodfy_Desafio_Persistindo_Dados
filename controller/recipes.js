@@ -48,7 +48,7 @@ exports.post = function(req, res) {
         return res.send('Please, fill all fields')
     }
 
-    let{image_recipe, ingredients, preparations, add_info} = req.body
+    let{image, title, author, ingredients, preparations, informations} = req.body
 
     let id = 1
     const lastId = data.recipes[data.recipes.length - 1].id
@@ -57,17 +57,19 @@ exports.post = function(req, res) {
         id = lastId + 1
     }
 
-    dataJson.recipes.push({
+    data.recipes.push({
         id,
-        image_recipe,
+        image,
+        title,
+        author,  
         ingredients,
         preparations,
-        add_info
+        informations,
     })
-fs.writeFile("data.json", JSON.stringify(dataJson, null, 2), function(err){
+fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
     if(err) return res.send("Write file error!")
 
-    return res. redirect("/recipes")
+    return res.redirect('recipes')
 })
 
 }

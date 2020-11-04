@@ -2,28 +2,29 @@
 
 {% block content %}
 
-  
+  <div id="admin-recipe-title">
+    <p>Gerenciar Receitas</p>
+    <a id="button-create" href="/admin/recipes/create">Cadastrar</a>
+  </div>
+
   <section class="cards">
-    <div id="admin-recipe-title">
-      <p>Gerenciar Receitas</p>
-      <a id="button-create" href="/admin/recipes/create">Cadastrar</a>
-    </div>
-    
+
     {% for item in items %}
 
-      <a href="/admin/recipes/" class="card_link" target="_blank">
+      <section class="card_link">
         <div class="img_recipe">
           <img src="{{item.image}}" alt=""/>
         </div>
+      </section>
+      <section class="card_link">
         <div class="title_recipe">
           <p>{{item.title}}</p>
         </div>
         <div class="author_recipe">
           <p>{{item.author}}</p>
         </div>
-
-      </a>
-
+        <a href="/admin/recipes/" class="link-view" target="_blank">Visualizar</a>
+      </section>
     {% endfor %}
 
   </section>

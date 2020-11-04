@@ -20,9 +20,9 @@
     <section class="cards">
       
       {% for item in items %}
-
+      {% if loop.index0 <3 %}
       <div class="card">
-        <div class="img_recipe">
+        <div class="img_recipe_home">
           <img src="{{item.image}}" alt="{{item.title}}" />
         </div>
         <div class="title_recipe">
@@ -32,7 +32,7 @@
           <p>{{item.author}}</p>
         </div>
       </div>
-
+      {% endif %}
       {% endfor %}
 
     </section>
