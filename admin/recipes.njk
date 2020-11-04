@@ -4,21 +4,21 @@
 
   
   <section class="cards">
-    <div id="admin-revenue-title">
+    <div id="admin-recipe-title">
       <p>Gerenciar Receitas</p>
-      <a id="button-create" href="/admin/revenues/create">Cadastrar</a>
+      <a id="button-create" href="/admin/recipes/create">Cadastrar</a>
     </div>
     
     {% for item in items %}
 
-      <a href="/admin/revenues/" class="card_link" target="_blank">
-        <div class="img_revenue">
+      <a href="/admin/recipes/" class="card_link" target="_blank">
+        <div class="img_recipe">
           <img src="{{item.image}}" alt=""/>
         </div>
-        <div class="title_revenue">
+        <div class="title_recipe">
           <p>{{item.title}}</p>
         </div>
-        <div class="author_revenue">
+        <div class="author_recipe">
           <p>{{item.author}}</p>
         </div>
 
