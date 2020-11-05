@@ -1,0 +1,66 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div class="comum_div">
+    <form class="form-newrecipe" method="post" action="/admin/recipes?_method=PUT" >
+
+    <div class="adm-recipe">
+            <label >Editando receita</label>
+            <button id="del" type="submit">Deletar</button>
+            <button id="sav" type="submit">Salvar receita</button>
+            
+        </div>
+        <div class="field">
+            <label for="">
+                Imagem
+            </label>
+            <input type="url" name="image" id="img" placeholder="http://" value="{{recipe.image}}">
+        </div>
+
+         <div class="field">
+            <label for="">
+                Titulo
+            </label>
+            <input type="text" name="title" id="tit" value="{{recipe.title}}">
+        </div>
+
+         <div class="field">
+            <label for="">
+                Autor
+            <input type="text" name="author" id="aut" value="{{recipe.author}}">
+        </div>
+
+        <div class="field" id="ingredients">
+            <label for="ingredients">
+                Ingredientes
+            </label>
+            <div class="ingredients">
+                <input type="text" name="ingredients" id="ing" value="{{recipe.ingredients}}">
+            </div>
+        </div>
+
+        <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+
+       
+            <div class="field" id="preparations">
+                <label for="preparation">
+                    Modo de preparo
+                </label>
+                <div class="preparations">
+                <input type="text" name="preparations" id="prep" value="{{recipe.preparations}}">
+                </div>
+            </div>
+    
+        <button type="button" class="add-preparation">Adicionar novo passo</button>
+
+        <div class="field">
+            <label for="add-info">
+                Informações adicionais
+            </label>
+            <textarea type="text" name="informations" id="info" value="{{recipe.informations}}"></textarea>
+        </div>
+    </form>
+</div>
+    <script src="/scripts.js"></script>
+
+{% endblock %}

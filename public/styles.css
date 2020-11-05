@@ -162,10 +162,12 @@
 }
 /*===============CARD==============*/
 
-/* .card_recipe {
+.card_recipe {
   position: relative;
   display: grid;
-  grid-template-rows: repeat(9, 0.1fr);
+  grid-template-rows: repeat(10, 0.1fr);
+  margin-top: 55px;
+
 }
 
 .img_recipe_id {
@@ -222,7 +224,6 @@ h4 {
 .preparation,
 .information {
   width: 940px;
-  margin: 0 230px 39px;
   font-size: 18px;
   color: #444444;
   line-height: 28px;
@@ -234,7 +235,7 @@ h4 {
   margin: 0 230px 39px;
   font-size: 18px;
   color: #444444;
-} */
+}
 
 /*================HIDE INFOS==============*/
 
@@ -321,17 +322,11 @@ h4 {
   line-height: 28px;
 }
 
-/*=============INDEX=============*/
+/*=============ADMIN=============*/
 
-#admin-recipe-title {
-  width: 298px;
-    height: 70px;
-    position: relative;
-    margin: 30px 972px 30px 230px;
-    font-weight: bold;
-    font-size: 24px;
-    color: #111111;
-    line-height: 28px;
+.comum_div {
+  width: 940px;
+  margin: 55px 0px 0px 230px
 }
 
 #button-create {
@@ -354,34 +349,41 @@ h4 {
   transition: all 0.4s ease-in-out;
   cursor: pointer;
 }
-/*=============CREATE=============*/
 
 form {
   width: 940px;
   overflow: hidden;
-  margin: 15px 190px 569px;
+  margin: 55px 190px 569px;
   padding: 40px;
 }
 
-.create-recipe label {
-  margin-right: 621px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #111111;
+#sav, 
+#edt {
+  width: 139px;
+    background: #6558c3;
+    border-radius: 4px;
+    padding: 9px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: right;
+    outline: none;
+    cursor: pointer;
+  
 }
 
-.create-recipe button {
-  background: #6558c3;
-  border-radius: 4px;
-  padding: 9px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #ffffff;
-  text-align: right;
-  outline: none;
-  cursor: pointer;
+#del {
+  width: 92px;
+    background: #DC4747;
+    border-radius: 4px;
+    padding: 9px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
 }
-
 .field label {
   display: block;
   font-size: 16px;
@@ -392,7 +394,7 @@ form {
 
 .field input,
 .ingredients input {
-  width: 100%;
+  width: 940px;
   height: 49px;
   background: #FFFFFF;
   border: 1px solid #DDDDDD;
@@ -431,4 +433,30 @@ text-align: right;
 background-color: white;
 outline: none;
 cursor: pointer;
+}
+
+#admin-recipe-title {
+  width: 298px;
+    height: 70px;
+    position: relative;
+    margin: 30px 972px 30px 230px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #111111;
+    line-height: 28px;
+}
+
+.adm-recipe  {
+  
+    font-size: 24px;
+    font-weight: bold;
+    color: #111111;
+  
+}
+.adm-recipe label {
+  display: -webkit-inline-box;
+  -webkit-box-align: baseline;
+    font-size: 24px;
+    font-weight: bold;
+    color: #111111;
 }

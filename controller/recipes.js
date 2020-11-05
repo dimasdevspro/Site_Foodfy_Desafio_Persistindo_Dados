@@ -73,3 +73,36 @@ fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
 })
 
 }
+
+exports.show = function(req, res) {
+    const { id } = req.params
+
+    const foundRecipes = data.recipes.find(function(recipes){
+        return recipes.id == id
+    })
+
+    if(!foundRecipes) return res.send("Recipes not found!")
+
+    const recipe = {
+        ...foundRecipes,
+
+    }
+
+    return res.render("show", {recipe})
+}
+
+exports.edit = function(req, res) {
+    const { id } = req.params
+
+    const foundRecipes = data.recipes.find(function(recipes){
+        return recipes.id ==id
+    })
+
+    if(!foundRecipes) return res.send("Recipes not found!")
+
+    const recipe = {
+        ...foundRecipes,
+    }
+    
+    return res.render("edit", {recipe})
+}
