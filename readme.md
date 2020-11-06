@@ -5,18 +5,29 @@
 ### Indice
 <!--ts-->
 * [Sobre](#sobre)
+
 * [Status do Projeto](#status-do-projeto)
+
 * [Histórico do Projeto](#historico-do-projeto)
+
 * [Features](#features)
+
 * [Demonstração da Aplicação](#demonstração-da-aplicação)
+
 * [Pré-requisitos](#pré-requisitos)
+
 * [Testes](#testes)
+
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
+
 * [Autor](#autor)
+
 * [Licença](#licença)
+
 <!--te-->
 
-### Sobre [↩](#indice)
+### Sobre 
+[↩](#indice)
 
 <p align="center">Acrescentando ao Projeto páginas de administração de receitas. Desafios propostos pela Rocketseat no Bootcamp Launchbase:</p>
 <ul >
@@ -28,13 +39,15 @@
  <li>Dinamismo do site com template Nunjucks - upgrade;</li>
 </ul>
 
-### Status do Projeto [↩](#indice)
+### Status do Projeto 
+[↩](#indice)
 
-<h4> 
-	Em construção...
+<h4> 	
+👌 Concluído 👌
 </h4>
 
-### Histórico do Projeto [↩](#indice)
+### Histórico do Projeto 
+[↩](#indice)
 
 <p>Evolução do projeto ao longo do Bootcamp:</p>
 <ul>
@@ -43,7 +56,9 @@
 </ul>
 
 
-### Features [↩](#indice)
+### Features 
+[↩](#indice)
+
 - [x] Página com menu
 - [x] Página Sobre
 - [x] Página com receitas
@@ -51,12 +66,14 @@
 - [x] Gerenciar receitas (em construção...)
 
 
-### Demonstração da Aplicação [↩](#indice)
+### Demonstração da Aplicação 
+[↩](#indice)
 
-<h1 align="center">Em construção...</h1>
+<h1 align="center"><img src="screenshots/Foodfy_Admin.gif" height="350" weigth="350"></h1>
 
 
-### Pré-requisitos [↩](#indice)
+### Pré-requisitos 
+[↩](#indice)
 
 Para começar, você vai precisar instalar em sua máquina as seguintes ferramentas:
 
@@ -67,8 +84,8 @@ Para começar, você vai precisar instalar em sua máquina as seguintes ferramen
 - O motor V8 Javascript do Chrome, versão LTS [NodeJS](https://nodejs.org/en/download/); );
 
 
-### Testes [↩](#indice)
-
+### Testes 
+[↩](#indice)
 
 ```bash
 # Baixe o editor equivalente para a sua plataforma
@@ -89,7 +106,8 @@ $ code .
 
 ```
 
-### Instalação de Dependências [↩](#indice)
+### Instalação de Dependências 
+[↩](#indice)
 
 Instalação de Dependências "Express", "Nodemon", "Nunjucks", "Browsersync" e "MethodOverride" para rodar aplicação.
 
@@ -127,7 +145,8 @@ $ npm start
 
 ```
 
-### Tecnologias utilizadas [↩](#indice)
+### Tecnologias utilizadas 
+[↩](#indice)
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
@@ -136,7 +155,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [NodeJS](https://nodejs.org/en/download/).
 
 
-### Autor [↩](#indice)
+### Autor 
+[↩](#indice)
 
 ---
 
@@ -152,6 +172,7 @@ Feito com ❤️ por Dimas 👋🏽 Entre em contato!
 [![Gmail Badge](https://img.shields.io/badge/-dimasdevspro@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:dimasdevspro@gmail.com)](mailto:dimasdevspro@gmail.com)
 
 
-### Licença [↩](#indice)
+### Licença 
+[↩](#indice)
 
 <img alt="APM" src="https://img.shields.io/apm/l/vim-mode">
