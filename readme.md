@@ -54,7 +54,7 @@
 - [x] Página Sobre
 - [x] Página com receitas
 - [x] Página de cada receita
-- [x] Gerenciar receitas (em construção...)
+- [x] Gerenciar receitas
 
 
 ### Demonstração da Aplicação 
