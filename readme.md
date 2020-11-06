@@ -5,23 +5,14 @@
 ### Indice
 <!--ts-->
 * [Sobre](#sobre)
-
 * [Status do Projeto](#status-do-projeto)
-
 * [Histórico do Projeto](#historico-do-projeto)
-
 * [Features](#features)
-
 * [Demonstração da Aplicação](#demonstração-da-aplicação)
-
 * [Pré-requisitos](#pré-requisitos)
-
 * [Testes](#testes)
-
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
-
 * [Autor](#autor)
-
 * [Licença](#licença)
 
 <!--te-->
