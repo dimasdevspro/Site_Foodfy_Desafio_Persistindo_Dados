@@ -182,10 +182,10 @@
       "id": 9,
       "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
       "title": "Sei lá",
-      "author": "Qualquer um",
-      "ingredients": "Qualquer coisa",
-      "preparations": "De qualquer forma",
-      "informations": ""
+      "author": "Qualquer um;",
+      "ingredients": "Qualquer coisa;",
+      "preparations": "De qualquer forma;",
+      "informations": "Olhaaaa o gás! "
     }
   ]
 }

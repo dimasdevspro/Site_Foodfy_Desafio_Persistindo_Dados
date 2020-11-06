@@ -1,35 +1,36 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<div class="comum_div">
-<form class="form-newrecipe" method="post" action="/admin/recipes">
-    <div class="adm-recipe">
-        
-        <div style="float:left">
-        <label >Criando Receita</label>
-        </div>
-        <div style="float:right">
-        <button id="sav" type="submit">Salvar Receita</button>
-        </div>
-    </div>
+    <div class="comum_div">
+        <form class="form-newrecipe" method="post" action="/admin/recipes">
+            <div class="adm-recipe">
 
-        <div class="field">
-            <label for="">
-                Imagem
-            </label>
-            <input type="url" name="image" id="img" placeholder="http://">
-        </div>
+                <div style="float:left">
+                    <label >Criando Receita</label>
+                </div>
+                <div style="float:right">
+                    <button id="sav" type="submit">Salvar Receita</button>
+                </div>
+            </div>
 
-        <div class="field">
-            <label for="">
-                Titulo
-            </label>
-            <input type="text" name="title" id="tit">
-        </div>
+            <div class="field">
+                <label for="">
+                    Imagem
+                </label>
+                <input type="url" name="image" id="img" placeholder="http://">
+            </div>
 
-        <div class="field">
-            <label for="">
-                Autor
+            <div class="field">
+                <label for="">
+                    Titulo
+                </label>
+                <input type="text" name="title" id="tit">
+            </div>
+
+            <div class="field">
+                <label for="">
+                    Autor
+                </label>
                 <input type="text" name="author" id="aut">
             </div>
 
@@ -62,7 +63,7 @@
                 <textarea type="text" name="informations" id="info"></textarea>
             </div>
         </form>
-</div>
-        <script src="/scripts.js"></script>
+    </div>
+    <script src="/scripts.js"></script>
 
-    {% endblock %}
+{% endblock %}

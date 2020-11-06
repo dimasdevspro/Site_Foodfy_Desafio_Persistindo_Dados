@@ -103,7 +103,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   position: inherit;
-  margin: 0px 230px;
+  margin: 0px 230px 30px;
   gap: 20px;
 }
 
@@ -138,6 +138,7 @@
   border-radius: 15px;
   display: block;
   margin: 0px auto;
+  margin-bottom: 15px;
   max-width: 100%;
 }
 
@@ -419,6 +420,7 @@ form {
   line-height: 28px;
   color: #111111;
   outline: none;
+  margin-bottom: 30px;
 }
 
 .add-ingredient,
