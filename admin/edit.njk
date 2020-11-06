@@ -65,23 +65,14 @@
                     <label for="add-info">
                         Informações adicionais
                     </label>
-                    <textarea type="text" name="informations" id="info" value="{{recipe.informations}}"></textarea>
+                    <textarea type="text" name="informations" id="info">{{recipe.informations}}</textarea>
                 </div>
 
             </div>
             <input type="hidden" name="id" value="{{recipe.id}}">
         </form>
 
-        <script>
-
-            const formDelete = document.querySelector("#form-delete");
-            formDelete.addEventListener("submit", function (event) {
-                const confirmation = confirm("Deseja Deletar?")
-                if (!confirmation) {
-                    event.preventDefault();
-                }
-            })
-        </script>
+        <script src="/scripts.js"></script>
 
     </div>
 
