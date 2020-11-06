@@ -111,7 +111,6 @@
   text-decoration: none;
 }
 
-
 .link-view:hover {
   box-shadow: 30px 30px 30px #7777;
   border-radius: 15px;
@@ -125,22 +124,21 @@
 }
 .img_recipe img {
   width: 172px;
-    height: 80px;
+  height: 80px;
   border-radius: 15px;
   display: block;
-    margin: 0px auto;
-    max-width: 100%;
-    object-fit: cover;
+  margin: 0px auto;
+  max-width: 100%;
+  object-fit: cover;
 }
 
-.img_recipe_home img{
+.img_recipe_home img {
   width: 300px;
-    height: 142px;
+  height: 142px;
   border-radius: 15px;
   display: block;
-    margin: 0px auto;
-    max-width: 100%;
-
+  margin: 0px auto;
+  max-width: 100%;
 }
 
 .title_recipe p {
@@ -154,8 +152,8 @@
 
 .author_recipe p {
   width: auto;
-    height: auto;
-    margin: 5px 0px 10px 0px;
+  height: auto;
+  margin: 5px 0px 10px 0px;
   color: #777777;
   font-size: 14px;
   line-height: 16px;
@@ -167,7 +165,6 @@
   display: grid;
   grid-template-rows: repeat(10, 0.1fr);
   margin-top: 55px;
-
 }
 
 .img_recipe_id {
@@ -179,23 +176,29 @@
 .img_recipe_id img {
   width: 940px;
   height: 230px;
-  margin: 0px 230px 50px;
+  margin: 0px 0px 50px;
   border-radius: 15px;
 }
 
+.title_recipe_id,
+.author_recipe_id,
+.grid_recipe_id {
+  display: flex;
+  width: 940px;
+}
 .title_recipe_id p {
-  width: 510px;
-  height: 42px;
-  margin: 50px 541px 4px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 36px;
   font-weight: 800;
   color: #111111;
 }
 
 .author_recipe_id p {
-  width: 180px;
-  height: 24px;
-  margin: 0 626px 50px 627px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 41px;
   font-size: 20px;
   color: #777777;
 }
@@ -206,7 +209,6 @@
 }
 
 .subtitles_recipe_id {
-  margin: 0 8px 20px 230px;
   font-size: 24px;
   font-weight: bold;
 }
@@ -224,6 +226,7 @@ h4 {
 .preparation,
 .information {
   width: 940px;
+  margin-bottom: 41px;
   font-size: 18px;
   color: #444444;
   line-height: 28px;
@@ -326,7 +329,7 @@ h4 {
 
 .comum_div {
   width: 940px;
-  margin: 55px 0px 0px 230px
+  margin: 55px 0px 0px 230px;
 }
 
 #button-create {
@@ -353,51 +356,47 @@ h4 {
 form {
   width: 940px;
   overflow: hidden;
-  margin: 55px 190px 569px;
-  padding: 40px;
 }
 
-#sav, 
+#sav,
 #edt {
-  width: 139px;
-    background: #6558c3;
-    border-radius: 4px;
-    padding: 9px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-    text-align: right;
-    outline: none;
-    cursor: pointer;
-  
+  background: #6558c3;
+  border-radius: 4px;
+  padding: 9px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: right;
+  outline: none;
+  cursor: pointer;
 }
 
 #del {
   width: 92px;
-    background: #DC4747;
-    border-radius: 4px;
-    padding: 9px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-    outline: none;
-    cursor: pointer;
-    text-align: center;
+  background: #dc4747;
+  border-radius: 4px;
+  padding: 9px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
 }
 .field label {
   display: block;
   font-size: 16px;
-  font-weight:bold;
+  font-weight: bold;
   color: #111111;
   margin: 30px 0px 10px;
 }
 
 .field input,
 .ingredients input {
-  width: 940px;
+  width: 938px;
   height: 49px;
-  background: #FFFFFF;
-  border: 1px solid #DDDDDD;
+  background: #ffffff;
+  border: 1px solid #dddddd;
   border-radius: 4px;
   font-size: 16px;
   color: #111111;
@@ -410,12 +409,12 @@ form {
 }
 
 .field textarea {
-  width: 100%;
+  width: 938px;
   height: clamp(157px, 257px, 357px);
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   border-radius: 4px;
   resize: vertical;
-  background: #FFFFFF;
+  background: #ffffff;
   font-size: 16px;
   line-height: 28px;
   color: #111111;
@@ -423,40 +422,41 @@ form {
 }
 
 .add-ingredient,
-.add-preparation, 
+.add-preparation,
 .link-view {
-margin-top: 15px;
-font-size: 16px;
-font-weight: bold;
-color: #6558C3;
-text-align: right;
-background-color: white;
-outline: none;
-cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #6558c3;
+  text-align: right;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
 }
 
 #admin-recipe-title {
   width: 298px;
-    height: 70px;
-    position: relative;
-    margin: 30px 972px 30px 230px;
-    font-weight: bold;
-    font-size: 24px;
-    color: #111111;
-    line-height: 28px;
+  height: 70px;
+  position: relative;
+  margin: 30px 972px 30px 230px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #111111;
+  line-height: 28px;
 }
 
-.adm-recipe  {
-  
-    font-size: 24px;
-    font-weight: bold;
-    color: #111111;
-  
+.adm-recipe {
+  width: 940px;
+  height: 37px;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #111111;
 }
 .adm-recipe label {
   display: -webkit-inline-box;
   -webkit-box-align: baseline;
-    font-size: 24px;
-    font-weight: bold;
-    color: #111111;
+  font-size: 24px;
+  font-weight: bold;
+  color: #111111;
 }
