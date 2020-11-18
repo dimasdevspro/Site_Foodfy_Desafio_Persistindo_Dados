@@ -6,6 +6,8 @@
   border: 0;
   font-family: "Roboto", sans-serif;
 }
+
+html, body {height:1400px; position:relative}
 /*==========PAGE INDEX==============*/
 .menu {
   width: 1400px;
@@ -30,6 +32,7 @@
 .menu_links a {
   color: white;
   font-size: 16px;
+  font-weight: bold;
   line-height: 19px;
   text-decoration: none;
 }
@@ -98,7 +101,7 @@
 
 /*==============CARDS=============*/
 
-.cards {
+.cards_recipes {
   width: max-content;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -158,6 +161,38 @@
   color: #777777;
   font-size: 14px;
   line-height: 16px;
+}
+
+.cards_chefs {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 30px 230px;
+  gap: 61px;
+}
+
+.card_chef {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  width: max-content;
+  margin: 0px 0px 30px;
+}
+.card_chef img{
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.chef_info {
+  margin-left: 20px;
+}
+
+.chef_info p {
+  margin-bottom: 10px;
+}
+
+.chef_info a {
+  text-decoration: none;
 }
 /*===============CARD==============*/
 
@@ -253,9 +288,10 @@ h4 {
 
 .footer {
   width: 1400px;
-  height: 62px;
-  background-color: #eeeeee;
-  margin-top: auto;
+    height: 62px;
+    background-color: #eeeeee;
+    position: absolute;
+    bottom: 0;
 }
 
 .footer p {
@@ -425,7 +461,8 @@ form {
 
 .add-ingredient,
 .add-preparation,
-.link-view {
+.link-view,
+.card_chef .chef_info a  {
   margin-top: 15px;
   font-size: 16px;
   font-weight: bold;
@@ -436,7 +473,8 @@ form {
   cursor: pointer;
 }
 
-#admin-recipe-title {
+#admin-recipe-title,
+#admin-chef-title {
   width: 298px;
   height: 70px;
   position: relative;
@@ -447,7 +485,8 @@ form {
   line-height: 28px;
 }
 
-.adm-recipe {
+.adm-recipe,
+.adm-chef {
   width: 940px;
   height: 37px;
   margin-bottom: 24px;

@@ -2,13 +2,13 @@
 
 {% block content %}
     <div class="comum_div">
-        <form style="position: absolute;width: 790px; "id="form-delete" method="post" action="/admin/recipes?_method=DELETE">
+        <form style="position: absolute;width: 790px; "id="form-delete" method="post" action="/admin/recipes/recipes?_method=DELETE">
             <input type="hidden" name="id" value="{{recipe.id}}">
             <div style="margin-left: 700px;">
                 <button id="del" type="submit">Deletar</button>
             </div>
         </form>
-        <form class="form-newrecipe" method="post" action="/admin/recipes?_method=PUT">
+        <form class="form-newrecipe" method="post" action="/admin/recipes/recipes?_method=PUT">
 
             <div class="adm-recipe">
                 <div style="float:left;">
@@ -34,9 +34,9 @@
 
             <div class="field">
                 <label for="">
-                    Autor
+                    Chef
                     </label>
-                    <input type="text" name="author" id="aut" value="{{recipe.author}}">
+                    <input type="text" name="name" id="chef" value="{{chef.name}}">
                 </div>
 
                 <div class="field" id="ingredients">

@@ -1,29 +1,19 @@
 {% extends "layout.njk" %}
 
 {% block content %}
- <div class="comum_div">
+
   <section class="card_recipe">
 
-<div class="adm-recipe">
-  <div style="float:left;">
-      <label class="subtitles_recipe_id">Receita:
-        {{recipe.title}}</label>
-  </div>
-  <div style="float:right;">
-      <a href="/admin/recipes/{{recipe.id}}/edit"><button id="edt" type="submit">Editar receita</button></a>
-  </div>  
-    </div>
-
     <div class="img_recipe_id">
-      <img src="{{recipe.image}}" alt=""/>
+      <img src="{{item.image}}" alt=""/>
     </div>
 
     <div class="title_recipe_id">
-      <p>{{recipe.title}}</p>
+      <p>{{item.title}}</p>
     </div>
 
     <div class="author_recipe_id">
-      <p>{{recipe.author}}</p>
+      <p>por {{item.author}}</p>
     </div>
 
     <div class="topic-ingredients">
@@ -35,7 +25,7 @@
 
       <div class="ingredients">
         <ul>
-          {% for ingredient in recipe.ingredients %}
+          {% for ingredient in item.ingredients %}
             <li>
               {{ingredient}}
             </li>
@@ -54,7 +44,7 @@
 
       <div class="preparation">
         <ul>
-          {% for preparation in recipe.preparations %}
+          {% for preparation in item.preparations %}
             <li>
               {{preparation}}
             </li>
@@ -72,13 +62,13 @@
       </div>
 
       <div class="information">
-        <p>{{recipe.informations}}</p>
+        <p>{{item.informations}}</p>
       </div>
-
+      
     </div>
 
   </section>
-</div>
-  <script src="/scripts.js"></script>
+
+  <script src="scripts.js"></script>
 
 {% endblock %}

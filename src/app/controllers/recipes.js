@@ -1,61 +1,43 @@
-const db = require('../../config/db')
 const { date } = require('../../lib/utils')
 
+const Recipe = require('../models/Recipe')
 
 module.exports = {
     home(req, res){
-        return res.render("home", {items: db.recipes})
+        Recipe.all(function(recipes){
+            return res.render("home", {recipes})
+        })
     },
     about(req, res){
         return res.render("about")
     },
     index(req, res){
-        return res.render("recipes")
+
+        Recipe.all(function(recipes){
+            return res.render("recipes/recipes", {recipes})
+        })  
     },
     create(req, res){
-        return res.render("create")
+        return res.render("recipes/create")
     },
     post(req, res){
-        const keys = Object.keys(req.body)
-
-        for(key of keys) {
-            if(req.body[key] == "")
-            return res.send('Please, fill all fields')
-        }
-    const query = `
-        INSERT INTO recipes {
-            chef_id,
-            image,
-            title,
-            ingredients,
-            preparation,
-            information,
-            created_at
-        } VALUES { $1, $2, $3, ARRAY[$4], ARRAY[$5], $6, $7}
-        RETURNING id
-    `
-    const values = [
-        req.body.chef_id,
-        req.body.image,
-        req.body.title,
-        req.body.ingredients,
-        req.body.preparation,
-        req.body.information,
-        date(Date.now()).iso
-    ]
-
-    db.query(query, values, function(err, results){
-        console.log(err)
-        console.log(results)
-        return
-    })
-
+        Recipe.create(req.body, function(recipe){
+            return res.redirect(`/admin/recipes/recipes/${recipe.id}`)
+        })
     },
     show(req, res){
-        return res.render("show")
+        Recipe.find(req.params.id, function(recipe){
+            if(!recipe) return res.send("Recipes not found!")
+            
+            return res.render("recipes/show", {recipe})
+        })      
     },
     edit(req, res){
-        return res.render("edit")
+        Recipe.find(req.params.id, function(recipe){
+            if(!recipe) return res.send("Recipes not found!")
+            
+            return res.render("recipes/edit", {recipe})
+        })      
     },
     put(req, res){
         const keys = Object.keys(req.body)
@@ -64,9 +46,14 @@ module.exports = {
         if(req.body[key] == "")
         return res.send('Please, fill all fields')
     }
+
+    Recipe.update(req.body, function(){
+        return res.redirect(`/admin/recipes/recipes/${req.body.id}`)
+    })
     },
     delete(req, res){
-        return res.render("delete")
+        Recipe.delete(req.body.id, function(){
+            return res.redirect(`/admin/recipes/recipes`)
+        })
     },
-
 }

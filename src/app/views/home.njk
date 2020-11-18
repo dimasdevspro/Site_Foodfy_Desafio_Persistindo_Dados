@@ -17,19 +17,19 @@
       </div>
     </div>
 
-    <section class="cards">
+    <section class="cards_recipes">
       
-      {% for item in items %}
+      {% for recipe in recipes %}
       {% if loop.index0 <3 %}
       <div class="card">
         <div class="img_recipe_home">
-          <img src="{{item.image}}" alt="{{item.title}}" />
+          <img src="{{recipe.image}}" alt="{{recipe.title}}" />
         </div>
         <div class="title_recipe">
-          <p>{{item.title}}</p>
+          <p>{{recipe.title}}</p>
         </div>
         <div class="author_recipe">
-          <p>{{item.author}}</p>
+          <p>{{recipe.author}}</p>
         </div>
       </div>
       {% endif %}

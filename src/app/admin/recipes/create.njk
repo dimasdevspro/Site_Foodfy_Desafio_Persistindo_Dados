@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="comum_div">
-        <form class="form-newrecipe" method="post" action="/admin/recipes">
+        <form class="form-newrecipe" method="post" action="/admin/recipes/recipes">
             <div class="adm-recipe">
 
                 <div style="float:left">
@@ -29,9 +29,9 @@
 
             <div class="field">
                 <label for="">
-                    Autor
+                    Chef
                 </label>
-                <input type="text" name="author" id="aut">
+                <input type="text" name="name" id="nam" placeholder="Selecione um Chef">
             </div>
 
             <div class="field" id="ingredients">
