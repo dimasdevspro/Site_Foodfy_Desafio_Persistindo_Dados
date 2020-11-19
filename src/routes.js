@@ -24,7 +24,7 @@ routes.delete("/admin/recipes/recipes", recipes.delete); // Deletar uma receita
 
 routes.get("/admin/chefs/chefs", chefs.index); // Mostrar a lista de receitas
 routes.get("/admin/chefs/chefs/create", chefs.create); // Mostrar formulário de nova receita
-// routes.get("/admin/recipes/recipes/:id", recipes.show); // Exibir detalhes de uma receita
+routes.get("/admin/chefs/chefs/:id", chefs.show); // Exibir detalhes de uma receita
 // routes.get("/admin/recipes/recipes/:id/edit", recipes.edit); // Mostrar formulário de edição de receita
 
 // routes.post("/admin/recipes/recipes", recipes.post); // Cadastrar nova receita

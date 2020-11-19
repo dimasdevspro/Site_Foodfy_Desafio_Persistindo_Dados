@@ -3,9 +3,12 @@ const { date } = require('../../lib/utils')
 
 module.exports = {
     all(callback) {
-        db.query(`SELECT * 
+        db.query(`
+        SELECT chefs.*, count(recipes) AS total_recipes
         FROM chefs
-        ORDER BY name ASC`, function(err, results){
+        LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
+        GROUP BY chefs.id
+        ORDER BY total_recipes ASC`, function(err, results){
             if(err)  throw `Database Error! ${err}`
             
             callback(results.rows)
@@ -40,9 +43,25 @@ module.exports = {
         })
     },
     find(id, callback) {
-        db.query(`SELECT * FROM recipes WHERE id = $1`, [id], function(err, results){
+        db.query(`
+        SELECT chefs.*, count(recipes) AS total_recipes
+        FROM chefs
+        LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
+        WHERE chefs.id = $1
+        GROUP BY chefs.id`, [id], function(err, results){
             if(err)  throw `Database Error! ${err}`
             callback(results.rows[0])
+        })
+    },
+    findRecipes(id, callback){
+        db.query(`
+        SELECT recipes.id, recipes.image, recipes.title, chefs.name AS author
+        FROM chefs
+        LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
+        WHERE chefs.id = $1
+        `, [id], function(err,results){
+            if(err) throw `Database Error! ${err}`
+            callback(results.rows)
         })
     },
     update(data, callback) {

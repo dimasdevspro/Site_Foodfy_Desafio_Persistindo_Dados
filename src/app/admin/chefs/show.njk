@@ -1,84 +1,56 @@
 {% extends "layout.njk" %}
 
 {% block content %}
- <div class="comum_div">
-  <section class="card_recipe">
+  <div class="comum_div">
+    <section class="card_chef">
 
-<div class="adm-recipe">
-  <div style="float:left;">
-      <label class="subtitles_recipe_id">Receita:
-        {{recipe.title}}</label>
+      <div class="adm-chef">
+        <div style="float:left;">
+          <label class="subtitles_chef_id">Chef:
+            {{chef.name}}</label>
+        </div>
+        <div style="float:right;">
+          <a href="/admin/chefs/chefs/{{chef.id}}/edit">
+            <button id="edt" type="submit">Editar Chef</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="img_chef_id">
+        <img src="{{chef.avatar_url}}" alt=""/>
+      </div>
+
+      <div class="name_chef_id">
+        <p>{{chef.name}}</p>
+      </div>
+
+      <div class="total_recipes_chef_id">
+        <p>{{chef.total_recipes}}
+          receitas</p>
+      </div>
+    </section>
+    <section class="cards_recipes">
+
+      {% for recipe in recipes %}
+
+        <section class="card_link">
+          <div class="img_recipe">
+            <img src="{{recipe.image}}" alt=""/>
+          </div>
+        </section>
+        <section class="card_link">
+          <div class="title_recipe">
+            <p>{{recipe.title}}</p>
+          </div>
+          <div class="author_recipe">
+            <p>por
+              {{recipe.author}}</p>
+          </div>
+          <a href="/admin/recipes/recipes/{{recipe.id}}" class="link-view">Visualizar</a>
+        </section>
+      {% endfor %}
+    </section>
   </div>
-  <div style="float:right;">
-      <a href="/admin/recipes/recipes/{{recipe.id}}/edit"><button id="edt" type="submit">Editar receita</button></a>
-  </div>  
-    </div>
-
-    <div class="img_recipe_id">
-      <img src="{{recipe.image}}" alt=""/>
-    </div>
-
-    <div class="title_recipe_id">
-      <p>{{recipe.title}}</p>
-    </div>
-
-    <div class="author_recipe_id">
-      <p>{{recipe.author}}</p>
-    </div>
-
-    <div class="topic-ingredients">
-
-      <div class="grid_recipe_id">
-        <p class="subtitles_recipe_id">Ingredientes</p>
-        <h4>Esconder</h4>
-      </div>
-
-      <div class="ingredients">
-        <ul>
-          {% for ingredient in recipe.ingredients %}
-            <li>
-              {{ingredient}}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="topic-preparation">
-
-      <div class="grid_recipe_id">
-        <p class="subtitles_recipe_id">Modo de Preparo</p>
-        <h4>Esconder</h4>
-      </div>
-
-      <div class="preparation">
-        <ul>
-          {% for preparation in recipe.preparations %}
-            <li>
-              {{preparation}}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="topic-information">
-
-      <div class="grid_recipe_id">
-        <p class="subtitles_recipe_id">Informações Adicionais</p>
-        <h4>Esconder</h4>
-      </div>
-
-      <div class="information">
-        <p>{{recipe.informations}}</p>
-      </div>
-
-    </div>
-
-  </section>
-</div>
   <script src="/scripts.js"></script>
 
 {% endblock %}
