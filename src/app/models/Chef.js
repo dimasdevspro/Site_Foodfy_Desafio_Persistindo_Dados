@@ -23,7 +23,7 @@ module.exports = {
             return res.send('Please, fill all fields')
         }
     const query = `
-        INSERT INTO recipes (
+        INSERT INTO chefs (
             name,
             avatar_url,
             created_at
@@ -66,23 +66,14 @@ module.exports = {
     },
     update(data, callback) {
         const query = `
-    UPDATE recipes SET
-        chef_id=($1),
-        image=($2),
-        title=($3),
-        ingredients=(ARRAY[$4]),
-        preparations=(ARRAY[$5]),
-        informations=($6)
-    WHERE id= $7
+        UPDATE chefs SET
+        name=($1),
+        avatar_url=($2)
+    WHERE id= $3
         `
-
         const values = [
-            data.chef_id,
-            data.image,
-            data.title,
-            data.ingredients,
-            data.preparations,
-            data.informations,
+            data.name,
+            data.avatar_url,
             data.id
         ]
 
@@ -93,7 +84,7 @@ module.exports = {
         })
     },
     delete(id, callback) {
-        db.query(`DELETE FROM recipes WHERE id = $1`, [id], function(err, results){
+        db.query(`DELETE FROM chefs WHERE id = $1`, [id], function(err, results){
             if(err)  throw `Database Error! ${err}`
 
             return callback()

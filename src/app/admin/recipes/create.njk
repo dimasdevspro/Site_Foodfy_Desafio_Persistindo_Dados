@@ -1,6 +1,7 @@
 {% extends "layout.njk" %}
 
 {% block content %}
+
     <div class="comum_div">
         <form class="form-newrecipe" method="post" action="/admin/recipes/recipes">
             <div class="adm-recipe">
@@ -31,7 +32,14 @@
                 <label for="">
                     Chef
                 </label>
-                <input type="text" name="name" id="nam" placeholder="Selecione um Chef">
+                <select name="chef">
+                    {% for chef in chefOptions %}
+                    <option value="{{chef.id}}" {% if recipe.chef_id == chef.id %} selected {% endif %}>
+                        {{chef.name}}
+                    </option>
+                    {% endfor %}
+                </select>
+
             </div>
 
             <div class="field" id="ingredients">
@@ -62,8 +70,9 @@
                 </label>
                 <textarea type="text" name="informations" id="info"></textarea>
             </div>
+
         </form>
     </div>
     <script src="/scripts.js"></script>
 
-{% endblock %}
+{% endblock %} 

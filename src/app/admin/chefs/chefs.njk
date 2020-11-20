@@ -6,19 +6,19 @@
     <p>Gerenciar Chefs</p>
     <a id="button-create" href="/admin/chefs/chefs/create">Cadastrar</a>
   </div>
-
-  <section class="cards_chefs">
-
+  <div class="container_cards_chefs">
     {% for chef in chefs %}
-      <div class="card_chef">
-        <img src="{{chef.avatar_url}}" alt=""/>
-        <div class="chef_info">
-          <p>{{chef.name}}</p>
-          <a href="/admin/chefs/chefs/{{chef.id}}" class="link-view">Visualizar</a>
+      <div class="cards_chefs">
+        <div class="chef">
+          <img src="{{chef.avatar_url}}" alt="">
+          <div class="chef_info">
+            <p>{{chef.name}}</p>
+            <a href="/admin/chefs/chefs/{{chef.id}}" class="link-view">Visualizar</a>
+          </div>
         </div>
       </div>
     {% endfor %}
-
-  </section>
-  <script src="/scripts.js"></script>
+  </div>
+</div>
+<script src="/scripts.js"></script>
 {% endblock %}

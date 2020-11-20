@@ -7,7 +7,11 @@
   font-family: "Roboto", sans-serif;
 }
 
-html, body {height:1400px; position:relative}
+html,
+body {
+  height: 1400px;
+  position: relative;
+}
 /*==========PAGE INDEX==============*/
 .menu {
   width: 1400px;
@@ -104,7 +108,7 @@ html, body {height:1400px; position:relative}
 .cards_recipes {
   width: max-content;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 172px 1fr 172px 1fr;
   position: inherit;
   margin: 0px 230px 30px;
   gap: 20px;
@@ -122,15 +126,18 @@ html, body {height:1400px; position:relative}
   cursor: pointer;
 }
 
-.img_recipe {
-  margin-left: 75px;
+.img_recipe,
+.card_link1 {
+  width: 172px;
+  height: 80px;
+  margin-right: 0;
 }
+
 .img_recipe img {
   width: 172px;
   height: 80px;
   border-radius: 15px;
   display: block;
-  margin: 0px auto;
   max-width: 100%;
   object-fit: cover;
 }
@@ -163,32 +170,32 @@ html, body {height:1400px; position:relative}
   line-height: 16px;
 }
 
-.cards_chefs {
+.container_cards_chefs {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 30px 230px;
-  gap: 61px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 30px 230px;
+    gap: 61px;
 }
 
-.card_chef {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  width: max-content;
-  margin: 0px 0px 30px;
-}
-.card_chef img{
+.cards_chefs img {
   width: 64px;
   height: 64px;
   border-radius: 50%;
+  object-fit: cover;
+}
+.chef {
+  display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .chef_info {
   margin-left: 20px;
+  width: 130px;
 }
-
 .chef_info p {
   margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 .chef_info a {
@@ -223,8 +230,7 @@ html, body {height:1400px; position:relative}
   display: flex;
   width: 940px;
 }
-.title_recipe_id p,
-.name_chef_id p {
+.title_recipe_id p {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -233,13 +239,28 @@ html, body {height:1400px; position:relative}
   color: #111111;
 }
 
+.name_chef_id p {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111111;
+}
+
 .author_recipe_id p,
-.total_recipes_chef_id p{
+.total_recipes_chef_id p {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 41px;
   font-size: 20px;
   color: #777777;
+}
+
+.total_recipes_chef_id p {
+  font-size: 20px;
+  text-align: center;
+  color: #777777;
+  margin-top: 46px;
 }
 
 .grid_recipe_id {
@@ -251,6 +272,7 @@ html, body {height:1400px; position:relative}
 .subtitles_chef_id {
   font-size: 24px;
   font-weight: bold;
+  text-align: left;
 }
 
 h4 {
@@ -292,10 +314,10 @@ h4 {
 
 .footer {
   width: 1400px;
-    height: 62px;
-    background-color: #eeeeee;
-    position: absolute;
-    bottom: 0;
+  height: 62px;
+  background-color: #eeeeee;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer p {
@@ -369,7 +391,7 @@ h4 {
 /*=============ADMIN=============*/
 
 .comum_div {
-  width: 940px;
+  width: 960px;
   margin: 55px 0px 0px 230px;
 }
 
@@ -410,6 +432,7 @@ form {
   text-align: right;
   outline: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 #del {
@@ -466,12 +489,13 @@ form {
 .add-ingredient,
 .add-preparation,
 .link-view,
-.card_chef .chef_info a  {
+.card_chef .chef_info a {
   margin-top: 15px;
   font-size: 16px;
   font-weight: bold;
   color: #6558c3;
   text-align: right;
+  text-decoration: none;
   background-color: white;
   outline: none;
   cursor: pointer;
@@ -505,18 +529,39 @@ form {
   font-weight: bold;
   color: #111111;
 }
+.card_chefs {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
 
+}
 .card_chef {
   position: relative;
   display: grid;
-  grid-template-rows: repeat(4, 0.1fr);
-  margin-top: 51px;
+  grid-template-columns: repeat(3, 320px);
+
+}
+
+.img_chef_id {
+  text-align: center;
 }
 
 .img_chef_id img {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    margin: 51px 600px 53px 370px;
-    border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: 51px 0px 30px 0px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.edt {
+  text-align: end;
+}
+
+select {
+  width: 350px;
+  outline: none;
+  color: #111111;
+  font-size: 20px;
+  line-height:21px
 }

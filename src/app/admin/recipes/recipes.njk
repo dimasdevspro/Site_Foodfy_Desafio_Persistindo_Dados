@@ -11,12 +11,12 @@
 
     {% for recipe in recipes %}
 
-      <section class="card_link">
+      <section class="card_link1">
         <div class="img_recipe">
           <img src="{{recipe.image}}" alt=""/>
         </div>
       </section>
-      <section class="card_link">
+      <section class="card_link2">
         <div class="title_recipe">
           <p>{{recipe.title}}</p>
         </div>
@@ -28,5 +28,6 @@
     {% endfor %}
 
   </section>
+  
   <script src="/scripts.js"></script>
 {% endblock %}

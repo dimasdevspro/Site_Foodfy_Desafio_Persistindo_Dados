@@ -36,7 +36,13 @@
                 <label for="">
                     Chef
                     </label>
-                    <input type="text" name="name" id="chef" value="{{chef.name}}">
+                    <select name="chef">
+                    {% for chefs in chefOptions %}
+                    <option>
+                        {{chefs.name}}
+                    </option>
+                    {% endfor %}
+                </select>
                 </div>
 
                 <div class="field" id="ingredients">

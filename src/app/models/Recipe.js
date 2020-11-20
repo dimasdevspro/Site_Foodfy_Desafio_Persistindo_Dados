@@ -56,10 +56,10 @@ module.exports = {
     },
     update(data, callback) {
         const query = `
-    UPDATE recipes SET
-        chef_id=($1),
-        image=($2),
-        title=($3),
+        UPDATE recipes SET
+        image=($1),
+        title=($2),
+        chef_id=($3),
         ingredients[:]=ARRAY[$4],
         preparations[:]=ARRAY[$5],
         informations=($6)
@@ -67,9 +67,9 @@ module.exports = {
         `
 
         const values = [
-            data.chef_id,
             data.image,
             data.title,
+            data.chef,
             data.ingredients,
             data.preparations,
             data.informations,

@@ -33,7 +33,8 @@ module.exports = {
     Chef.find(req.params.id, function (chef) {
       if (!chef) return res.send("Chefs not found!");
 
-      return res.render("chefs/edit", { chef });
+      return res.render("chefs/edit", {chef});
+      // console.log(chef)
     });
   },
   put(req, res) {
@@ -43,8 +44,9 @@ module.exports = {
       if (req.body[key] == "") return res.send("Please, fill all fields");
     }
 
-    Chef.update(req.body, function () {
+    Chef.update(req.body, function() {
       return res.redirect(`/admin/chefs/chefs/${req.body.id}`);
+      // console.log(req.body)
     });
   },
   delete(req, res) {

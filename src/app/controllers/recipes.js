@@ -18,7 +18,12 @@ module.exports = {
         })  
     },
     create(req, res){
-        return res.render("recipes/create")
+        Recipe.chefsSelectOptions(function(options){
+             return res.render("recipes/create", {chefOptions: options} )
+            // console.log({chefOptions: options})
+        })
+
+       
     },
     post(req, res){
         Recipe.create(req.body, function(recipe){
@@ -36,12 +41,13 @@ module.exports = {
         Recipe.find(req.params.id, function(recipe){
             if(!recipe) return res.send("Recipes not found!")
             
-            return res.render("recipes/edit", {recipe})
-        })      
+            Recipe.chefsSelectOptions(function(options){
+                return res.render("recipes/edit", {recipe, chefOptions: options})      
+    })
+    })        
     },
     put(req, res){
         const keys = Object.keys(req.body)
-
     for(key of keys) {
         if(req.body[key] == "")
         return res.send('Please, fill all fields')
@@ -49,6 +55,7 @@ module.exports = {
 
     Recipe.update(req.body, function(){
         return res.redirect(`/admin/recipes/recipes/${req.body.id}`)
+
     })
     },
     delete(req, res){
