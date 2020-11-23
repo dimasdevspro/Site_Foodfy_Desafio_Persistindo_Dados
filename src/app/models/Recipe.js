@@ -22,24 +22,24 @@ module.exports = {
         }
     const query = `
         INSERT INTO recipes (
-            chef_id,
             image,
             title,
             ingredients,
             preparations,
             informations,
-            created_at
+            created_at,
+            chef_id
         ) VALUES ( $1, $2, $3, $4, $5, $6, $7)
         RETURNING id
     `
     const values = [
-        data.chef_id,
         data.image,
         data.title,
         data.ingredients,
         data.preparations,
         data.informations,
-        date(Date.now()).iso
+        date(Date.now()).iso,
+        data.chef
     ]
 
     db.query(query, values, function(err, results){
@@ -59,20 +59,20 @@ module.exports = {
         UPDATE recipes SET
         image=($1),
         title=($2),
-        chef_id=($3),
-        ingredients[:]=ARRAY[$4],
-        preparations[:]=ARRAY[$5],
-        informations=($6)
-    WHERE id= $7
+        ingredients=ARRAY[$3],
+        preparations=ARRAY[$4],
+        informations=($5),
+        chef_id=($6)
+        WHERE id= $7
         `
 
         const values = [
             data.image,
             data.title,
-            data.chef,
             data.ingredients,
             data.preparations,
             data.informations,
+            data.chef,
             data.id
         ]
 

@@ -20,9 +20,13 @@
         <div class="title_recipe">
           <p>{{recipe.title}}</p>
         </div>
+        {% for chef in chefs%}
+        {% if chef.id == recipe.chef_id%}
         <div class="author_recipe">
-          <p>por {{recipe.author}}</p>
+          <p>por {{chef.name}}</p>
         </div>
+        {%endif%}
+        {%endfor%}
         <a href="/admin/recipes/recipes/{{recipe.id}}" class="link-view">Visualizar</a>
       </section>
     {% endfor %}

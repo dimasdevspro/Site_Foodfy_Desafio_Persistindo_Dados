@@ -114,6 +114,15 @@ body {
   gap: 20px;
 }
 
+.cards_recipes_home {
+  width: max-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: inherit;
+  margin: 0px 230px 30px;
+  gap: 20px;
+}
+
 .cards a {
   text-decoration: none;
 }

@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <section class="cards_recipes">
+    <section class="cards_recipes_home">
       
       {% for recipe in recipes %}
       {% if loop.index0 <3 %}
@@ -28,9 +28,13 @@
         <div class="title_recipe">
           <p>{{recipe.title}}</p>
         </div>
+        {% for chef in chefs%}
+        {% if chef.id == recipe.chef_id%}      
         <div class="author_recipe">
-          <p>{{recipe.author}}</p>
+          <p>por {{chef.name}}</p>
         </div>
+        {% endif %}
+        {% endfor %}
       </div>
       {% endif %}
       {% endfor %}

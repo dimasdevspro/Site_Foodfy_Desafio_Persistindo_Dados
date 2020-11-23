@@ -1,21 +1,28 @@
 const { date } = require('../../lib/utils')
 
 const Recipe = require('../models/Recipe')
+const Chef = require('../models/Chef')
 
 module.exports = {
     home(req, res){
         Recipe.all(function(recipes){
-            return res.render("home", {recipes})
+            Chef.all(function(chefs){
+                 return res.render("home", {chefs, recipes})
+            })
+           
         })
+    
     },
     about(req, res){
         return res.render("about")
     },
     index(req, res){
-
         Recipe.all(function(recipes){
-            return res.render("recipes/recipes", {recipes})
-        })  
+            Chef.all(function(chefs){
+                 return res.render("recipes/recipes", {chefs, recipes})
+            })
+           
+        })
     },
     create(req, res){
         Recipe.chefsSelectOptions(function(options){
@@ -54,8 +61,8 @@ module.exports = {
     }
 
     Recipe.update(req.body, function(){
-        return res.redirect(`/admin/recipes/recipes/${req.body.id}`)
-
+        // return res.redirect(`/admin/recipes/recipes/${req.body.id}`)
+        console.log(req.body)
     })
     },
     delete(req, res){
