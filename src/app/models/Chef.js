@@ -20,7 +20,7 @@ module.exports = {
 
         for(key of keys) {
             if(data[key] == "")
-            return res.send('Please, fill all fields')
+            return res.alert('Please, fill all fields')
         }
     const query = `
         INSERT INTO chefs (

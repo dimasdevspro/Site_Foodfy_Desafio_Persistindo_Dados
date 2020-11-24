@@ -20,14 +20,16 @@
 ### Sobre 
 [↩](#indice)
 
-<p align="center">Acrescentando ao Projeto páginas de administração de receitas. Desafios propostos pela Rocketseat no Bootcamp Launchbase:</p>
+<p>Atualizando projeto com bancos de dados SQL. Desafios propostos pela Rocketseat no Bootcamp Launchbase:</p>
 <ul >
- <li><a href="https://github.com/rocketseat-education/bootcamp-launchbase-desafios-04/blob/master/desafios/04-admin-foodfy.md" target="_blank">Desafio Foodfy;</a></li>
+ <li><a href="https://github.com/rocketseat-education/bootcamp-launchbase-desafios-05/blob/master/desafios/05-persistindo-dados-foodfy.md" target="_blank">Desafio Foodfy;</a></li>
 </ul>
 <p>Detalhes do Projeto:</p>
 <ul>
- <li>Criação de um Backend para o Front-end;</li>
- <li>Dinamismo do site com template Nunjucks - upgrade;</li>
+ <li>Criação de um Banco de Dados SQL;</li>
+ <li>Criação de novas áreas Administrativas;</li>
+  <li>Criação de Busca e Filtro de Receitas;</li>
+   <li>Adição de Paginação.</li>
 </ul>
 
 ### Status do Projeto 
@@ -44,6 +46,7 @@
 <ul>
 <li><a href="https://github.com/dimasdevspro/Site_Foodfy">FrontPage simples</a></li>
 <li><a href="https://github.com/dimasdevspro/Project_Foodfy_Refatorado">Refatoração do Projeto</a></li>
+<li><a href="https://github.com/dimasdevspro/Desafio_Foodfy_Admin">Inserindo Admin</a></li>
 </ul>
 
 
@@ -55,12 +58,14 @@
 - [x] Página com receitas
 - [x] Página de cada receita
 - [x] Gerenciar receitas
+- [x] ...
 
 
 ### Demonstração da Aplicação 
 [↩](#indice)
 
-<h1 align="center"><img src="screenshots/Foodfy_Admin.gif" height="350" weigth="350"></h1>
+<h1 align="center"><img src="screenshots/Foodfy_Persis_demo1.gif" height="350" weigth="350"></h1>
+
 
 
 ### Pré-requisitos 
@@ -72,7 +77,11 @@ Para começar, você vai precisar instalar em sua máquina as seguintes ferramen
 
 - Um editor de código [VSCode](https://code.visualstudio.com/);
 
-- O motor V8 Javascript do Chrome, versão LTS [NodeJS](https://nodejs.org/en/download/); );
+- O motor V8 Javascript do Chrome, versão LTS [NodeJS](https://nodejs.org/en/download/);
+
+- Sistema de Gerenciador de Dados [Postgresql](https://www.postgresql.org/download/);
+
+- Cliente Gráfico e Multiplataforma do Postgresql [Postbird](https://www.electronjs.org/apps/postbird).
 
 
 ### Testes 
@@ -87,12 +96,12 @@ $ <https://code.visualstudio.com/>
 # Acesse o terminal/cmd de sua plataforma (Win, Linux, etc)
 
 # Clone este repositório com o seguinte comando abaixo
-$ git clone <https://github.com/dimasdevspro/Desafio_Foodfy_Admin>
+$ git clone <https://github.com/dimasdevspro/Desafio_Foodfy_Desafio_Persistindo_Dados>
 
 # Ainda no terminal, acesse a pasta com mais um comando
-$ cd Desafio_Foodfy_Admin
+$ cd Desafio_Foodfy_Desafio_Persistindo_Dados
 
-# Agora digite este comando, para editar/testas o projeto
+# Agora digite este comando, para editar/testar o projeto
 $ code .
 
 ```
@@ -100,14 +109,14 @@ $ code .
 ### Instalação de Dependências 
 [↩](#indice)
 
-Instalação de Dependências "Express", "Nodemon", "Nunjucks", "Browsersync" e "MethodOverride" para rodar aplicação.
+Instalação de Dependências "Express", "Nodemon", "Nunjucks", "Browsersync", "MethodOverride", "Postgre" para rodar aplicação.
 
 ```bash
 # Abra o terminal do VSCode na Aba "Terminal"
 $ "New Terminal"
 
 # Certifique-se que o terminal está com o caminho de sua pasta, i.e
-$ /Desafio_Foodfy_Admin/
+$ /Desafio_Foodfy_Desafios_Persistindo_Dados/
 
 # Digite o comando no terminal para instalar o Express
 $ npm install express
@@ -127,9 +136,12 @@ $ npm install browser-sync npm-run-all
 # Certifique que no arquivo package.json, na linha "scripts" esteve descrito:
 "scripts": {
     "start": "npm-run-all -p nodemon browser-sync",
-    "nodemon": "nodemon server.js",
-    "browser-sync": "browser-sync start --proxy http://localhost:3333 --files 'public,admin'"
+    "nodemon": "nodemon src/server.js",
+    "browser-sync": "browser-sync start --proxy http://localhost:3333 --files 'public, src/app/admin, src/app/views'"
   },
+
+# Digite o comando no terminal para instalar o "Postgre"
+$ npm install pg
 
 # Digite no terminal o seguinte comando para rodar o servidor
 $ npm start
@@ -143,7 +155,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [VSCode](https://code.visualstudio.com/);
 - [Git](https://git-scm.com);
-- [NodeJS](https://nodejs.org/en/download/).
+- [NodeJS](https://nodejs.org/en/download/);
+- [Postgresql](https://www.postgresql.org/download/);
+- [Postbird](https://www.electronjs.org/apps/postbird).
 
 
 ### Autor 

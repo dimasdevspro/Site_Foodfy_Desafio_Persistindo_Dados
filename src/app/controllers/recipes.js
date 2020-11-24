@@ -16,14 +16,32 @@ module.exports = {
     about(req, res){
         return res.render("about")
     },
-    index(req, res){
-        Recipe.all(function(recipes){
-            Chef.all(function(chefs){
-                 return res.render("recipes/recipes", {chefs, recipes})
-            })
-           
-        })
-    },
+    index(req, res) {
+        let { filter, page, limit } = req.query
+    
+        page = page || 1
+        limit = limit || 6
+        let offset = limit *(page - 1)
+    
+        const params = {
+          filter,
+          page,
+          limit, 
+          offset,
+          callback(recipes) {
+    
+            const pagination = {
+              total: Math.ceil(recipes[0].total / limit),
+              page
+            }
+            return res.render("recipes/recipes", {recipes, pagination, filter })
+            // console.log(recipes, pagination, filter)
+          }
+         
+        }
+        Recipe.paginate(params)
+    
+      },
     create(req, res){
         Recipe.chefsSelectOptions(function(options){
              return res.render("recipes/create", {chefOptions: options} )

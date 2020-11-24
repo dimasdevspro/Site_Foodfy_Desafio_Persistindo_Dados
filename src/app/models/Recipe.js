@@ -18,7 +18,7 @@ module.exports = {
 
         for(key of keys) {
             if(data[key] == "")
-            return res.send('Please, fill all fields')
+         return res.alert('Please, fill all fields')
         }
     const query = `
         INSERT INTO recipes (
@@ -49,7 +49,11 @@ module.exports = {
         })
     },
     find(id, callback) {
-        db.query(`SELECT * FROM recipes WHERE id = $1`, [id], function(err, results){
+        db.query(`
+        SELECT recipes.*, chefs.name AS author 
+        FROM recipes 
+        LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
+        WHERE recipes.id = $1`, [id], function(err, results){
             if(err)  throw `Database Error! ${err}`
             callback(results.rows[0])
         })
@@ -109,8 +113,8 @@ module.exports = {
         if (filter ){
 
             filterQuery = `
-            WHERE recipes.name ILIKE '%${filter}%'
-            OR recipes.email ILIKE '%${filter}%'
+            WHERE recipes.title ILIKE '%${filter}%'
+            OR chefs.name ILIKE '%${filter}%'
             `
 
             totalQuery = `(
@@ -120,15 +124,18 @@ module.exports = {
         }
 
         query =`
-        SELECT recipes.*, ${totalQuery} 
+        SELECT recipes.image, recipes.title, recipes.id AS recipe_id, chefs.name AS author, ${totalQuery} 
         FROM recipes
         ${filterQuery}
+        LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
+        ORDER BY recipes.title
         LIMIT $1 OFFSET $2
         `
 
         db.query(query, [limit, offset], function(err, results){
             if (err) throw `Database Error! ${err}` 
             callback(results.rows)
+            // console.log(results.rows)
         })
     }
 }
