@@ -4,7 +4,13 @@
 
   <div id="admin-chef-title">
     <p>Gerenciar Chefs</p>
-    <a id="button-create" href="/admin/chefs/chefs/create">Cadastrar</a>
+    <div class="header">
+      <a id="button-create" href="/admin/chefs/chefs/create">Cadastrar</a>
+      <form action="/admin/chefs/chefs" method="GET">
+        <input type="text" name="filter" placeholder="Filtrar por Nome">
+        <button id="button-filter" type="submit">Filtrar</button>
+      </form>
+    </div>
   </div>
   <div class="container_cards_chefs">
     {% for chef in chefs %}
@@ -19,6 +25,10 @@
       </div>
     {% endfor %}
   </div>
-</div>
-<script src="/scripts.js"></script>
+  <div 
+  class="pagination" 
+  data-page={{pagination.page}} 
+  data-total={{pagination.total}}
+  ></div>
+  <script src="/scriptsPaginate.js"></script>
 {% endblock %}

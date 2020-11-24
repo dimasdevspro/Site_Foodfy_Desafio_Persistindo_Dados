@@ -53,6 +53,19 @@ module.exports = {
             callback(results.rows[0])
         })
     },
+    findBy(filter, callback) {
+        db.query(`
+        SELECT chefs.*, count(recipes) AS total_recipes
+        FROM chefs
+        LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
+        WHERE chefs.name ILIKE '%${filter}%'
+        GROUP BY chefs.id
+        ORDER BY total_recipes ASC`, function(err, results){
+            if(err)  throw `Database Error! ${err}`
+            
+            callback(results.rows)
+        })       
+    },
     findRecipes(id, callback){
         db.query(`
         SELECT recipes.id, recipes.image, recipes.title, chefs.name AS author
@@ -103,26 +116,25 @@ module.exports = {
         let query = "",
         filterQuery = "",
         totalQuery = `(
-            SELECT count(*) FROM recipes
+            SELECT count(*) FROM chefs
         ) AS total`
 
 
         if (filter ){
 
             filterQuery = `
-            WHERE recipes.name ILIKE '%${filter}%'
-            OR recipes.email ILIKE '%${filter}%'
+            WHERE chefs.name ILIKE '%${filter}%'
             `
 
             totalQuery = `(
-                SELECT count(*) FROM recipes
+                SELECT count(*) FROM chefs
                 ${filterQuery}
             ) AS total`
         }
 
         query =`
-        SELECT recipes.*, ${totalQuery} 
-        FROM recipes
+        SELECT chefs.*, ${totalQuery} 
+        FROM chefs
         ${filterQuery}
         LIMIT $1 OFFSET $2
         `

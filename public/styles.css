@@ -404,7 +404,7 @@ h4 {
   margin: 55px 0px 0px 230px;
 }
 
-#button-create {
+#button-create, #button-filter {
   text-decoration: none;
   width: 100px;
   height: 40px;
@@ -419,7 +419,8 @@ h4 {
   position: relative;
 }
 
-#button-create:hover {
+#button-create:hover,
+#button-filter:hover{
   box-shadow: 1px 2px 3px 4px #444444;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
@@ -573,4 +574,28 @@ select {
   color: #111111;
   font-size: 20px;
   line-height:21px
+}
+
+/* FILTER */
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.header form {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  justify-items: end;
+}
+
+.header form input {
+  border: 1px solid #eee;
+    padding: 4px 8px;
+    outline: none;
+    box-sizing: border-box;
+    width: 50%;
+    height: 40px;
+    margin: 10px;
 }
